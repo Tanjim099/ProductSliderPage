@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #slider-container{
+            display: flex;
+            gap: 10px;
+        }
+        .slider_box{
+            box-shadow: 0px 0px 4px gray;
+        }
+        .arrow{
+            position: absolute;
+            top: 10%;
+            color: black;
+            background-color: aliceblue;
+            padding: 8px 19px;
+            cursor: pointer;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .next{
+            right: 10px;
+        }
+        .prev{
+           left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="slider-container">
+
+      <span class="arrow prev" >&#10094;</span>
+      <span class="arrow next" >&#10095;</span>
+    </div>
+    <script>
+        const data = [
+            {
+                image : "https://www.jiomart.com/images/cms/aw_rbslider/slides/1684268430_Redmi_web.jpg",
+                name : "Redmi"
+            },
+            {
+                Image : "https://www.jiomart.com/images/cms/aw_rbslider/slides/1684268430_Redmi_web.jpg",
+                name : "Redmi"
+            },
+            {
+                Image : "https://www.jiomart.com/images/cms/aw_rbslider/slides/1684268430_Redmi_web.jpg",
+                name : "Redmi"
+            },
+            {
+                Image : "https://www.jiomart.com/images/cms/aw_rbslider/slides/1684268430_Redmi_web.jpg",
+                name : "Redmi"
+            },
+            {
+                Image : "https://www.jiomart.com/images/cms/aw_rbslider/slides/1684268430_Redmi_web.jpg",
+                name : "Redmi"
+            },
+            {
+                Image : "https://www.jiomart.com/images/cms/aw_rbslider/slides/1684268430_Redmi_web.jpg",
+                name : "Redmi"
+            },
+            {
+                Image : "https://www.jiomart.com/images/cms/aw_rbslider/slides/1684268430_Redmi_web.jpg",
+                name : "Redmi"
+            },
+            {
+                Image : "https://www.jiomart.com/images/cms/aw_rbslider/slides/1684268430_Redmi_web.jpg",
+                name : "Redmi"
+            },
+        ];
+
+        const prevBtn = document.getElementsByClassName("prev");
+        const nextBtn = document.getElementsByClassName("next");
+        const slider = document.getElementById("slider-container");
+
+
+        for(let i=0; i<data.length; i++){
+            const image = data[i].image;
+            const name = data[i].name;
+
+            let newDiv = document.createElement("div");
+            newDiv.classList.add("slider_box")
+            newDiv.innerHTML = `
+            <img class="productimage" src="${image}"/>
+            <div class="title">${name}</div>
+            `;
+            slider.appendChild(newDiv);
+        }
+    </script>
+</body>
+</html>
